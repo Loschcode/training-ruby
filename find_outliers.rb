@@ -19,7 +19,7 @@ def find_outlier(integers)
 
 end
 
-# Best
+# Best practice
 def find_outlier(integers)
   integers.partition(&:odd?).find(&:one?).first
 end

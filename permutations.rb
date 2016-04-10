@@ -6,4 +6,4 @@ def permutations(string)
   string.chars.permutation.map(&:join).sort.uniq
 end
 
-permsol('aabb')
+permutations('aabb')

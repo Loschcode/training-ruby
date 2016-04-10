@@ -20,3 +20,14 @@ guess_gifts([
         {:size => "small", :clatters => "yes", :weight => "light"}
       ]
       )
+
+# Time complexity choice
+def guess_gifts(wishlist, presents)
+
+  # Transform the wishlist, mapping attributes to a list of names
+  wishmap = Hash.new { |hash, attributes| hash[attributes] = [] }
+  wishlist.each { |w| wishmap[w.reject { |k| k == :name }].push(w[:name]) }
+
+  # Then just do the lookups
+  presents.flat_map { |attributes| wishmap[attributes] }
+end

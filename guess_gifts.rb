@@ -6,7 +6,7 @@ def guess_gifts(wishlist, presents)
 
   wishlist.map do |w|
     w[:name] if presents.include? w.reject { |key| key == :name }
-  end.compact
+  end.compact.uniq
 
 end
 
